@@ -17,7 +17,7 @@
 
 The `/journal` directory contains:
 
-- [x] [Introduction](./#readme)
+- [x] [Introduction](#terraform-beginner-bootcamp-2023)
 - [ ] [Week 0 - Project Prep](journal/week0.md)
 - [ ] [Week 1 - Building](journal/week1.md)
 - [ ] [Week 2 - Connecting](journal/week2.md)
