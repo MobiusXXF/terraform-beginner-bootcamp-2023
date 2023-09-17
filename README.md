@@ -10,7 +10,7 @@
 
 ###
 - Project Template from [ExamProCo](https://github.com/ExamProCo/terraform-beginner-bootcamp-2023).
-- Obtained the Terraform Associate 003 on 1st Sep 2023, and while seeking ways to apply theory into practice, I began this bootcamp to do just that.
+- Obtained the [Terraform Associate 003](https://www.hashicorp.com/certification/terraform-associate) on 1st Sep 2023, and while seeking ways to apply theory into practice, I began this bootcamp to do just that.
 - --Awaiting Completion--
 
 ## Journaling Homework
