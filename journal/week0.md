@@ -2,7 +2,7 @@
 
 ### Semantic Versioning
 
-This project is utilising semantic versioning for its tagging.[semver.org](https://semver.org/)
+This project is utilising semantic versioning for its tagging. [semver.org](https://semver.org/)
 
 For example:
 
