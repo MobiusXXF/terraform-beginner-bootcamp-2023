@@ -1,6 +1,11 @@
 # Week 0
+<ins>Table of Contents</ins>
+- [Semantic Versioning](#semantic-versioning)
+- []()
+- []()
 
-### Semantic Versioning
+
+## Semantic Versioning
 
 This project is utilising semantic versioning for its tagging. [semver.org](https://semver.org/)
 
