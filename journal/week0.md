@@ -1,9 +1,21 @@
-# Week 0
+# Week 0 - Project Prep
 <ins>Table of Contents</ins>
 - [Semantic Versioning](#semantic-versioning)
+- [Install Terraform CLI](#install-the-terraform-cli)
+    - [Considerations with Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
+    - [Check Linux Version]()
+    - [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
+        - [Shebang](#shebang)
+        - [Execution Considerations](#execution-considerations)
+        - [Linux Permissions](#linux-permissions)
+    - [Gitpod Lifecycle](#gitpod-lifecycle)
+- [Project Root Env Var](#project-root-env-var)
+    - []()
+- [Install AWS CLI](#install-aws-cli)
+    - []()
+- [Terraform Provider](#terraform-provider)
+- [Terraform Cloud and Terraform Login](#terraform-cloud-and-terraform-login)
 - []()
-- []()
-
 
 ## Semantic Versioning
 
@@ -78,8 +90,30 @@ chmod 744 ./bin/install_terraform_cli
 
 [Linux Permissions](https://en.wikipedia.org/wiki/chmod)
 
-### Github Lifecycle
+### Gitpod Lifecycle
 
 Need to be careful when using the Init because it will rerun if we restart an exisiting workspace.
 
 [Gitpod Tasks](https://www.gitpod.io/docs/configure/workspaces/tasks)
+
+
+## Project Root Env Var
+
+The `env` command displays all the environment variables (Env Vars) that are currently set.
+
+```env | grep terraform-beginner-bootcamp-2023```
+- The use of `grep` allows filtering, in this case, specifying terraform-beginner-bootcamp-2023 related environment variables.
+
+To avoid accidently dispoting junk files into the `root` directory when running a script. You can change directory by one into the workspace then change it back into root after the scropt is done.
+
+```bash
+#!/usr/bin/env bash
+
+cd /workspace
+
+# script
+
+cd $PROJECT_ROOT
+```
+- Instead of hardcoding path, you can use an environment variable to make it more reusable.
+
