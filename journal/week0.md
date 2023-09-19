@@ -13,7 +13,7 @@
     - []()
 - [Install AWS CLI](#install-aws-cli)
     - []()
-- [Terraform Provider](#terraform-provider)
+- [Terraform Basics](#terraform-basics)
 - [Terraform Cloud and Terraform Login](#terraform-cloud-and-terraform-login)
 - []()
 
@@ -138,3 +138,69 @@ If successful, you should see a json payload return like this:
 ```
 
 To utilise the AWS CLI, we need to generate AWS CLI credentials from AWS IAM by generating access keys.
+
+#### Commit and diverging errors:
+- Mistakes made using `git revert` during aws bash script and having to use git reset command:
+    ```bash
+    git reset --hard HEAD^^
+    ``` 
+- To undo and remove changes from the last two commits, specified by caret or hat operator, (`^`).
+
+
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources their providers and modules from the Terraform registry which can be found at [registry.terraform.io](https://registry.terraform.io/).
+
+- **Providers** are an interface between the API of cloud/service providers, allows creation of resources.
+- **Modules** are a template for configuring resources in a more organised and reusable way.
+
+### Terraform Console
+
+We can see a list of all Terraform commands by typing `terraform`.
+
+### Terraform Init
+
+`terraform init` initialises the working directory for terraform workflow and should be done before any state viewing/altering commands, i.e. plan, apply or destroy
+
+When you run terraform init, the specific version of the provider is installed. Terraform will create a .terraform.lock.hcl file to record these provider settings. This should be commited to Version sontrol System (VCS) e.g. Github.
+
+Example:
+
+<img alt=".terraform.lock.hcl" src="assets/week0-tfinit.png" width="150px">
+
+### Terraform Plan
+
+`terraform plan` shows an execution plan without performing the actual resource provisioning. The plan includes counts of resources being added, changed or destroyed.
+
+Example:
+
+<img alt="terraform plan" src="assets/week0-tfplan.png" width="500px">
+
+
+### Terraform Apply
+
+`terraform apply` is how we provision infrastructure and it summarises of resources to be created provided.
+
+Just using terraform apply with no flags means a confirmation is required to proceed.
+
+Example:
+
+<img alt="terraform apply" src="assets/week0-tfapply.png" width="500px">
+
+**Note:** Auto confirmation possible: `terraform apply -auto-approve`. For frequent small incremental changes for dev test environments.
+
+#### Terraform State
+
+When running `terraform apply`, a `.tfstate` file is generated which that contains data on the current state of your infrastructure.
+
+**Note:** This should <ins>**NOT**</ins> be commited to VCS as it may contain sensitive data.
+
+If you lose this file, you lose knowing the state of your infrastuture.
+
+`.terraform.tfstate.backup` is the previous version of state file.
+
+### Terraform Destroy
+
+`terraform destroy` deconstructs all provisioned infrastructure in the current state file. Specified infrastructure can be targeted by using the `-target flag`, e.g. `terraform destroy -target='resource.name'`.
