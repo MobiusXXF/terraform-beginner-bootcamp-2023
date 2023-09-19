@@ -155,6 +155,8 @@ If successful, you should see a json payload return like this:
 
 To utilise the AWS CLI, we need to generate AWS CLI credentials from AWS IAM by generating access keys.
 
+<hr width="75%">
+
 #### Commit and diverging errors:
 - Mistakes made using `git revert` during aws bash script and having to use git reset command:
     ```bash
@@ -222,3 +224,20 @@ If you lose this file, you lose knowing the state of your infrastuture.
 `terraform destroy` deconstructs all provisioned infrastructure in the current state file. Specified infrastructure can be targeted by using the `-target flag`, e.g. `terraform destroy -target='resource.name'`.
 
 You can use auto confirmation by using `terraform destroy -auto-approve` instead.
+
+<hr width="75%">
+
+#### Random String Provider Error:
+
+During assignment of random string as bucket name, found that naming rules would cause the apply comamand to fail. 
+
+Therefore, explicity stating use of lowercase and avoiding uppercase values allowed acceptable bucket names to be generated.
+
+```h
+resource "random_string" "bucket_name" {
+  lower = true
+  upper = false
+  length           = 32
+  special          = false
+}
+```
