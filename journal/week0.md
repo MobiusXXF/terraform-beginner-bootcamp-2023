@@ -26,6 +26,7 @@
     - [Terraform Destroy](#terraform-destroy)
     - [Random String Provider Error](#random-string-provider-error)
     - [Issues with Terraform Cloud Login and Gitpod Workspace](#issues-with-terraform-cloud-login-and-gitpod-workspace)
+    - [TF-Alias](#tf-alias)
 
 
 ## Semantic Versioning
@@ -263,3 +264,27 @@ Difficulties getting Terraform Login to work properly with Gitpod.
 
 To fix this I had to write an bash script which automates the workaround that deals with the Terraform Login issue, [bin/generate_tfrc_credentials](../bin/generate_tfrc_credentials). So this process runs for each gitpod workspace.
 
+<hr width="75%">
+
+### TF-Alias
+
+Replace `terraform` with `tf` for quicker workflow by setting alias in `./bash_profile`.
+
+Found the use of the logic/conditionals when covering this bash script interesting.
+
+To check if a string already exists in a file, you can use:
+```bash
+grep -q 'string' target_file
+```
+
+Next is `#?`, which is a special variable in bash that holds the exit status of the last command. An exit status of `0` means success or command execute with no problems. This can be used in a conditional statement to execute a given command if a given string is not present in this case:
+```bash
+if [ $? -ne 0 ]; then
+    echo 'string' >> target_file
+    echo 'Command executed successfully'
+else
+    echo 'String already exist'
+fi
+```
+
+**NOTE:** I'll be sure to make use of this in the future.
