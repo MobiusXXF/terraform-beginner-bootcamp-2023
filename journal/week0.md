@@ -117,3 +117,24 @@ cd $PROJECT_ROOT
 ```
 - Instead of hardcoding path, you can use an environment variable to make it more reusable.
 
+## Install AWS CLI
+
+AWS CLI is installed for this project and specific env var are set. Installation via bash script `install_aws_cli`.
+
+[Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+We can check if our AWS credentials are configured corrrectly by running the AWS CLI command:
+```bash
+aws sts get-caller-identity
+```
+
+If successful, you should see a json payload return like this:
+```json
+{
+    "UserId": "ABSGERGERGEGKEGFF",
+    "Account": "154353534545",
+    "Arn": "arn:aws:iam::154353534545:user/IAMterraformer"
+}
+```
+
+To utilise the AWS CLI, we need to generate AWS CLI credentials from AWS IAM by generating access keys.
