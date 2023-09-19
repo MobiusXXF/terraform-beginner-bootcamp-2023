@@ -241,3 +241,9 @@ resource "random_string" "bucket_name" {
   special          = false
 }
 ```
+
+## Issues with Terraform Cloud Login and Gitpod Workspace
+
+When attempting to run `terraform plan`, an error occurred saying `**ERROR**: No Valid credential sources found`.
+
+To fix this I had to
