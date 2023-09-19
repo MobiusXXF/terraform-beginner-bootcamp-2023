@@ -117,6 +117,22 @@ cd $PROJECT_ROOT
 ```
 - Instead of hardcoding path, you can use an environment variable to make it more reusable.
 
+### Setting env vars
+
+Example - setting AWS credentials as env vars.
+
+Enter the following into the terminal once you have generated access keys on AWS, replacing values with your own and making sure no credentials are exposed:
+
+```bash
+export AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE"
+export AWS_SECRET_ACCESS_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+export AWS_DEFAULT_REGION="eu-west-2"
+
+gp env AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE"
+gp env AWS_SECRET_ACCESS_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+gpv AWS_DEFAULT_REGION="eu-west-2"
+```
+
 ## Install AWS CLI
 
 AWS CLI is installed for this project and specific env var are set. Installation via bash script `install_aws_cli`.
@@ -204,3 +220,5 @@ If you lose this file, you lose knowing the state of your infrastuture.
 ### Terraform Destroy
 
 `terraform destroy` deconstructs all provisioned infrastructure in the current state file. Specified infrastructure can be targeted by using the `-target flag`, e.g. `terraform destroy -target='resource.name'`.
+
+You can use auto confirmation by using `terraform destroy -auto-approve` instead.
