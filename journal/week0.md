@@ -138,4 +138,3 @@ If successful, you should see a json payload return like this:
 ```
 
 To utilise the AWS CLI, we need to generate AWS CLI credentials from AWS IAM by generating access keys.
-
