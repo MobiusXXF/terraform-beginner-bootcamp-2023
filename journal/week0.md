@@ -1,21 +1,32 @@
-# Week 0 - Project Prep
-<ins>Table of Contents</ins>
+# Week 0 - Project Preparation
+
+## Table of Contents
+
 - [Semantic Versioning](#semantic-versioning)
 - [Install Terraform CLI](#install-the-terraform-cli)
     - [Considerations with Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
     - [Check Linux Version]()
     - [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
-        - [Shebang](#shebang)
+         [Shebang](#shebang)
         - [Execution Considerations](#execution-considerations)
         - [Linux Permissions](#linux-permissions)
     - [Gitpod Lifecycle](#gitpod-lifecycle)
-- [Project Root Env Var](#project-root-env-var)
-    - []()
+- [Project Root Environment Variables](#project-root-environment-variables)
+    - [Setting Env Vars](#setting-env-vars)
 - [Install AWS CLI](#install-aws-cli)
-    - []()
+    - [Commit and diverging errors](#commit-and-diverging-errors)
 - [Terraform Basics](#terraform-basics)
-- [Terraform Cloud and Terraform Login](#terraform-cloud-and-terraform-login)
-- []()
+    - [Terraform Registry](#terraform-registry)
+    - [Terraform Commands](#terraform-commands)
+    - [Terraform Init](#terraform-init)
+    - [Terraform Plan](#terraform-plan)
+        - [Terraform Lock](#terraform-lock)
+    - [Terraform Apply](#terraform-apply)
+        - [Terraform State](#terraform-state)
+    - [Terraform Destroy](#terraform-destroy)
+    - [Random String Provider Error](#random-string-provider-error)
+    - [Issues with Terraform Cloud Login and Gitpod Workspace](#issues-with-terraform-cloud-login-and-gitpod-workspace)
+
 
 ## Semantic Versioning
 
@@ -97,7 +108,7 @@ Need to be careful when using the Init because it will rerun if we restart an ex
 [Gitpod Tasks](https://www.gitpod.io/docs/configure/workspaces/tasks)
 
 
-## Project Root Env Var
+## Project Root Environment Variables
 
 The `env` command displays all the environment variables (Env Vars) that are currently set.
 
@@ -117,7 +128,7 @@ cd $PROJECT_ROOT
 ```
 - Instead of hardcoding path, you can use an environment variable to make it more reusable.
 
-### Setting env vars
+### Setting Env Vars
 
 Example - setting AWS credentials as env vars.
 
@@ -174,13 +185,17 @@ Terraform sources their providers and modules from the Terraform registry which 
 - **Providers** are an interface between the API of cloud/service providers, allows creation of resources.
 - **Modules** are a template for configuring resources in a more organised and reusable way.
 
-### Terraform Console
+### Terraform Commands
 
 We can see a list of all Terraform commands by typing `terraform`.
+
+Most common commands use are the following:
 
 ### Terraform Init
 
 `terraform init` initialises the working directory for terraform workflow and should be done before any state viewing/altering commands, i.e. plan, apply or destroy
+
+#### Terraform Lock
 
 When you run terraform init, the specific version of the provider is installed. Terraform will create a .terraform.lock.hcl file to record these provider settings. This should be commited to Version sontrol System (VCS) e.g. Github.
 
@@ -229,7 +244,7 @@ You can use auto confirmation by using `terraform destroy -auto-approve` instead
 
 #### Random String Provider Error:
 
-During assignment of random string as bucket name, found that naming rules would cause the apply comamand to fail. 
+During assignment of random string as bucket name, it became apparent that the [S3 Bucket Naming Rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) would cause the apply command to fail. 
 
 Therefore, explicity stating use of lowercase and avoiding uppercase values allowed acceptable bucket names to be generated.
 
@@ -242,8 +257,9 @@ resource "random_string" "bucket_name" {
 }
 ```
 
-## Issues with Terraform Cloud Login and Gitpod Workspace
+### Issues with Terraform Cloud Login and Gitpod Workspace
 
 Difficulties getting Terraform Login to work properly with Gitpod.
 
-To fix this I had to write an bash script which automates the workaround that deals with the Terraform Login issue, [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials). So this process runs for each gitpod workspace.
+To fix this I had to write an bash script which automates the workaround that deals with the Terraform Login issue, [bin/generate_tfrc_credentials](../bin/generate_tfrc_credentials). So this process runs for each gitpod workspace.
+
