@@ -2,8 +2,8 @@
 
 ## Table of Contents
 
-- [Semantic Versioning](#semantic-versioning)
-- [Install Terraform CLI](#install-the-terraform-cli)
+- [<ins>Semantic Versioning</ins>](#semantic-versioning)
+- [<ins>Install Terraform CLI</ins>](#install-the-terraform-cli)
     - [Considerations with Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
     - [Check Linux Version]()
     - [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
@@ -11,11 +11,11 @@
         - [Execution Considerations](#execution-considerations)
         - [Linux Permissions](#linux-permissions)
     - [Gitpod Lifecycle](#gitpod-lifecycle)
-- [Project Root Environment Variables](#project-root-environment-variables)
+- [<ins>Project Root Environment Variables</ins>](#project-root-environment-variables)
     - [Setting Env Vars](#setting-env-vars)
-- [Install AWS CLI](#install-aws-cli)
+- [<ins>Install AWS CLI</ins>](#install-aws-cli)
     - [Commit and diverging errors](#commit-and-diverging-errors)
-- [Terraform Basics](#terraform-basics)
+- [<ins>Terraform Basics</ins>](#terraform-basics)
     - [Terraform Registry](#terraform-registry)
     - [Terraform Commands](#terraform-commands)
     - [Terraform Init](#terraform-init)
