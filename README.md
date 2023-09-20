@@ -19,5 +19,5 @@ The `/journal` directory contains:
 
 - [x] [Introduction](#terraform-beginner-bootcamp-2023)
 - [x] [Week 0 - Project Preparation](journal/week0.md)
-- [ ] [Week 1 - Building Terrahouse](journal/week1.md)
+- [••>] [Week 1 - Building Terrahouse](journal/week1.md)
 - [ ] [Week 2 - Connecting to TerraTowns](journal/week2.md)
