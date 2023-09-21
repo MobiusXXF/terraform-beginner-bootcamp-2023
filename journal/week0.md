@@ -262,7 +262,7 @@ resource "random_string" "bucket_name" {
 
 Difficulties getting Terraform Login to work properly with Gitpod.
 
-To fix this I had to write an bash script which automates the workaround that deals with the Terraform Login issue, [bin/generate_tfrc_credentials](../bin/generate_tfrc_credentials). So this process runs for each gitpod workspace.
+To fix this we had to write an bash script which automates the workaround that deals with the Terraform Login issue, [bin/generate_tfrc_credentials](../bin/generate_tfrc_credentials). So this process runs for each gitpod workspace.
 
 <hr width="75%">
 
