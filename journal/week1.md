@@ -2,7 +2,19 @@
 
 ## Table of Contents
 
-- [<ins></ins>]()
+- [Root Module](#root-module)
+- [Variables in Terraform Cloud](#variables-in-terraform-cloud)
+- [(IDE...) Loading Terraform Input Variables](#ide-loading-terraform-input-variables)
+- [](#variablestf-file-input-variable-documentation)
+  - [](#var-flag)
+  - [](#var-file-flag)
+  - [](#tfvars-file)
+  - [](#env-vars)
+- [Dealing With Configuration Drift](#dealing-with-configuration-drift)
+  - [Fix Missing Resources with Terraform Import](#fix-missing-resources-with-terraform-import)
+  - [Fix Manual Configuration](#fix-manual-configuration)
+- [S3 Static Website Hosting](#s3-static-website-hosting)
+- []()
 
 
 ## Root Module
@@ -65,3 +77,30 @@ A variable definitions file uses the same basic syntax as Terraform language fil
 A less prioritised way of defining variables for Terraform, is the use of env vars prefix with `TF_VAR_` then the name of a declared variable.
 
 [Terraform Variables](https://developer.hashicorp.com/terraform/language/values/variables)
+
+
+## Dealing With Configuration Drift
+Lose of state file may have to be resolved with partial/complete teardown. However, depending on the resources, it can be rectified.
+
+### Fix Missing Resources With Terraform Import
+Using `terraform import` we can import provisioned resources that are missing from the `.tfstate` file. By checking the provider documentation, we see what resources `can` be imported and the appropriate command syntax to do so. 
+
+```js
+terraform import aws_s3_bucket.bucket bucket-name
+```
+
+You can also do the same by using an import block, like in this example:
+
+```js
+import {
+  to = aws_s3_bucket.bucket
+  id = "bucket-name"
+}
+```
+
+[Example for Importing S3 Bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+### Fix Manual Configuration
+Resources have the potential to be manually deleted through ClickOps, the use of the AWS Console/GUI.
+
+Here terraform plan does a good job of acknowledging the difference or drift, and attempts to reinstate infrastructure back to expected state.
