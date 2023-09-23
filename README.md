@@ -5,7 +5,7 @@
 
 
 <div align="center">
-  <a href="https://terraform.cloudprojectbootcamp.com/"><img src="https://user-images.githubusercontent.com/7776/268042721-ab015431-2d14-4910-aa37-be4807b2b905.png" alt="Terraform Beginner Bootcamp Image"></a>
+  <a href="https://terraform.cloudprojectbootcamp.com/"><img src="assets/tfbb-banner" alt="Terraform Beginner Bootcamp Image"></a>
 </div>
 
 ###
