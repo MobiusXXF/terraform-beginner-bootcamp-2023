@@ -6,15 +6,16 @@
 - [Variables in Terraform Cloud](#variables-in-terraform-cloud)
 - [(IDE...) Loading Terraform Input Variables](#ide-loading-terraform-input-variables)
 - [](#variablestf-file-input-variable-documentation)
-  - [](#var-flag)
-  - [](#var-file-flag)
-  - [](#tfvars-file)
-  - [](#env-vars)
+  - [-var Flag](#var-flag)
+  - [-var-file Flag](#var-file-flag)
+  - [.tfvars File](#tfvars-file)
+  - [Env Vars](#env-vars)
 - [Dealing With Configuration Drift](#dealing-with-configuration-drift)
   - [Fix Missing Resources with Terraform Import](#fix-missing-resources-with-terraform-import)
   - [Fix Manual Configuration](#fix-manual-configuration)
 - [S3 Static Website Hosting](#s3-static-website-hosting)
-- []()
+- [AWS Terrahouse Module](#aws-terraform-module)
+  - [Module Sources](#module-sources)
 
 
 ## Root Module
@@ -85,7 +86,7 @@ Lose of state file may have to be resolved with partial/complete teardown. Howev
 ### Fix Missing Resources With Terraform Import
 Using `terraform import` we can import provisioned resources that are missing from the `.tfstate` file. By checking the provider documentation, we see what resources `can` be imported and the appropriate command syntax to do so. 
 
-```js
+```tf
 terraform import aws_s3_bucket.bucket bucket-name
 ```
 
@@ -104,3 +105,31 @@ import {
 Resources have the potential to be manually deleted through ClickOps, the use of the AWS Console/GUI.
 
 Here terraform plan does a good job of acknowledging the difference or drift, and attempts to reinstate infrastructure back to expected state.
+
+## Fix Using Terraform "Refresh"
+This command reads the current settings from all managed remote objects an updates the Terraform state to match.
+
+```bash
+terraform apply -refresh-only --auto-approve
+```
+
+## AWS Terrahouse Module
+Modules allow for better organisation of infrastructure, into categories such as `storage` or `content delivery`. Where related resources a grouped together and enable reusability of resource configurations with Terraform.
+
+### Module Sources
+This part of the module block allows Terraform to know where to source the configuration files for the desired child module, i.e terrahouse_aws:
+
+```js
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
+As shown above, input variables can be passed into the module, and these variables need to be declared in its own `variables.tf` file and more simply into the root module.
+
+Using the source we can import the module from various places e.g:
+- Locally
+- Github
+- Terraform Registry
+
