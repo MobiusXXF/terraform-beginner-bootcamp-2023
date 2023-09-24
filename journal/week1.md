@@ -13,9 +13,12 @@
 - [Dealing With Configuration Drift](#dealing-with-configuration-drift)
   - [Fix Missing Resources with Terraform Import](#fix-missing-resources-with-terraform-import)
   - [Fix Manual Configuration](#fix-manual-configuration)
-- [S3 Static Website Hosting](#s3-static-website-hosting)
 - [AWS Terrahouse Module](#aws-terraform-module)
   - [Module Sources](#module-sources)
+- [S3 Static Website Hosting](#s3-static-website-hosting)
+  - [Working With Files in Terraform](#working-with-files-in-terraform)
+  - [Filemd5](#filemd5)
+  - [Path Variable](#path-variable)
 
 
 ## Root Module
@@ -133,3 +136,34 @@ Using the source we can import the module from various places e.g:
 - Github
 - Terraform Registry
 
+
+## S3 Static Website Hosting
+In this bootcamp we configure with Terraform, meaning provising infrastructure, configuration manangement (`provisioners` - not ideal, `Ansible` more production standard) and data configuration (of files). To learn the capabilities of Terraform.
+
+### Working With Files in Terraform
+
+### Fileexists function
+This is a built in terraform function to check the existance of a file.
+
+```condition = fileexists(var.error_html_filepath)```
+[https://developer.hashicorp.com/terraform/language/functions/fileexists](https://developer.hashicorp.com/terraform/language/functions/fileexists)
+
+### Filemd5
+This built in function hashes the contents of the file which we use to check content status of a file.
+
+[https://developer.hashicorp.com/terraform/language/functions/filemd5](https://developer.hashicorp.com/terraform/language/functions/filemd5)
+
+### Path Variable
+In terraform there is a special variable called path that allows us to reference local paths:
+
+path.module = get the path for the current module
+path.root = get the path for the root module 
+
+[Special Path Variable](https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info)
+
+```js
+resource "aws_s3_object" "index_html" { 
+  bucket = aws_s3_bucket.website_bucket.bucket 
+  key = "index.html" 
+  source = "${path.root}/public/index.html" }
+```
