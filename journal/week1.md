@@ -19,6 +19,11 @@
   - [Working With Files in Terraform](#working-with-files-in-terraform)
   - [Filemd5](#filemd5)
   - [Path Variable](#path-variable)
+- [Content Delivery Network Implementation](#content-delivery-network-implementation)
+  - []()
+  - []()
+- []()
+  - []()
 
 
 ## Root Module
@@ -167,3 +172,22 @@ resource "aws_s3_object" "index_html" {
   key = "index.html" 
   source = "${path.root}/public/index.html" }
 ```
+
+
+## Content Delivery Network Implementation
+
+### Terraform Locals
+Local variables can be defined uses `locals`. Useful when transforming data to another format and then referencing it as a variable.
+
+```py
+locals {
+  s3_origin_id = "MyS3Origin"
+}
+```
+
+[Local Values](https://developer.hashicorp.com/terraform/language/values/locals)
+
+### Terraform Data Sources
+
+
+[AWS Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
