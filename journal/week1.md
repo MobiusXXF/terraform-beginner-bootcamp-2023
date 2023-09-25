@@ -172,9 +172,25 @@ resource "aws_s3_object" "index_html" {
   key = "index.html" 
   source = "${path.root}/public/index.html" }
 ```
+<hr width="75%">
+
+#### Typo Error with S3 bucket configuration:
+During the Content Delivery Network lecture I found that the `error.html` file kept being served up as the `default_root_object`, which is set to `index.html`. After some investigation I realised the files had the same etag, so the same file must be duplicated for some reason or being uploaded as the source for both html objects.
+
+Eventually I discovered that I accidently passed the wrong variable into the index_html_filepath:
+```js
+index_html_filepath = var.error_html_filepath
+```
+I rectified this by change replacing the `error` with the correct matching variable `index`:
+```js
+index_html_filepath = var.index_html_filepath
+```
+
+**NOTE:** It reminded me to be more careful to avoid typos and how easy it is to miss. Checking the contents of the S3 object in question earlier would have sped up the troubleshooting process.
 
 
 ## Content Delivery Network Implementation
+We are using CloudFront as our Content Delivery Network, which provides a globally-distributed network of proxy servers to cache content, e.g. html files and images, more locally to users which reduces latency and improves user experience.
 
 ### Terraform Locals
 Local variables can be defined uses `locals`. Useful when transforming data to another format and then referencing it as a variable.
@@ -188,6 +204,7 @@ locals {
 [Local Values](https://developer.hashicorp.com/terraform/language/values/locals)
 
 ### Terraform Data Sources
-
+Data Sources are used to get information from external/internal resources and insert that information into our Terraform Configuration.
 
 [AWS Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+
