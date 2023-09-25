@@ -233,3 +233,32 @@ resource "aws_s3_object" "index_html" {
 ```
 
 
+## Invalidate CloudFront Cache
+
+
+## Provisioners 
+Provisioners allow the execution of command on a remote terminal, configuring the commands in Terraform.
+
+Typically used as last resort, with Terraform discourages its use, as software like ansible do a better job.
+
+[Declaring Provisioners](https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax)
+
+### Local-exec
+This will execute a command on the machine running the terraform commands e.g, plan apply
+
+### Remote-exec
+This will execute commands on a remote terminal you target. Will need authentication to get into machines such as ssh.
+
+
+### Heredoc String
+This programming principle allows you to express multiple-line string more clearly. Using backslash `\` to divide string into seperate lines.
+
+```
+<<COMMAND
+aws cloudfront create-invalidation \
+--distribution-id ${aws_cloudfront_distribution.s3_distribution.id} \
+--paths '/*'
+    COMMAND
+```
+
+[Heredoc Strings](https://developer.hashicorp.com/terraform/language/expressions/strings#heredoc-strings)
