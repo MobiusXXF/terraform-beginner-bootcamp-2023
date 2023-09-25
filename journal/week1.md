@@ -208,3 +208,28 @@ Data Sources are used to get information from external/internal resources and in
 
 [AWS Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
 
+
+## Setup Content Version
+
+
+### Changing the Lifecycle of resource
+
+
+[Meta-Arguments Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
+
+### Terraform data
+Plain data values such as Local Values and Input Variables don't have any side-effects to plan against and so they aren't valid in replace_triggered_by. You can use [terraform_data](https://developer.hashicorp.com/terraform/language/resources/terraform-data)'s behavior of planning an action each time input changes to indirectly use a plain value to trigger replacement.
+
+```
+resource "aws_s3_object" "index_html" {
+  #
+  etag = filemd5(var.index_html_filepath)
+  `lifecycle` {
+    replace_triggered_by = [terraform_data.content_version.output]
+    ignore_changes = [etag]
+  }
+}
+```
+
+
