@@ -262,3 +262,15 @@ aws cloudfront create-invalidation \
 ```
 
 [Heredoc Strings](https://developer.hashicorp.com/terraform/language/expressions/strings#heredoc-strings)
+
+
+## Assets Upload
+
+
+### For Each Expressions
+
+
+### Each.key 
+
+
+### Path.root
