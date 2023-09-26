@@ -265,6 +265,7 @@ aws cloudfront create-invalidation \
 
 
 ## Assets Upload
+Here we created an assets folder to hold our images and whatever else we may decorate our house with.
 
 
 ### For Each Expressions
