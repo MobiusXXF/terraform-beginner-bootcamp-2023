@@ -70,3 +70,49 @@ section h2 {
 section img {
     width: 65vw;
 }
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+        overflow: hidden;
+        width: 80px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #5BBA47;
+    }
+
+    input[type='range']::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        color: #13bba4;
+        margin-top: -1px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        cursor: pointer;
+        background: #D03C3D;
+        box-shadow: -80px 0 0 80px #7B56A2;
+    }
+
+}
+
+/** FF*/
+input[type="range"]::-moz-range-progress {
+    background-color: #7B56A2;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #5BBA47;
+}
+
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+    background-color: #7B56A2;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background-color: #5BBA47;
+}
