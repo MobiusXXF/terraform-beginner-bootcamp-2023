@@ -22,3 +22,7 @@ The `/journal` directory contains:
 - [x] [Week 0 - Project Preparation](journal/week0.md)
 - [••>] [Week 1 - Building Terrahouse](journal/week1.md)
 - [ ] [Week 2 - Connecting to TerraTowns](journal/week2.md)
+
+## Coming Soon
+
+![Soul House Preview](assets/th-preview.png)

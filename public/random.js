@@ -1,5 +1,5 @@
 // Define an array of audio file names
-const audioFiles = ["assets/enyk.mp3", "assets/the-light.mp3"];
+const audioFiles = ["assets/enyk.mp3", "assets/the-light.mp3", "assets/findaway.mp3", "assets/grease.mp3", "assets/left-right.mp3", "assets/stressed-out.mp3", "assets/tellme.mp3", "assets/tlol.mp3", "assets/umi-says.mp3", "assets/wtd.mp3", "assets/elec-relax.mp3"];
 
 window.addEventListener("load", selectRandomAudio);
 
