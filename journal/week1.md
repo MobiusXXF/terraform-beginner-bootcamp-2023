@@ -288,3 +288,5 @@ Cloudfront distro makes me download the mp3 files and im not sure how to make it
 
 
 ## Need to make volume slider functional somehow
+
+## Audio doesnt loop or follow the playcount set, does this need to be done with js?
