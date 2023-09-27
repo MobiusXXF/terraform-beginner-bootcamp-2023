@@ -4,6 +4,11 @@
     font-family: sans-serif;
 }
 
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+
 .loader {
     background: #000;
     height: 100%;
