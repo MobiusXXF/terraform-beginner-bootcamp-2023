@@ -275,3 +275,13 @@ Here we created an assets folder to hold our images and whatever else we may dec
 
 
 ### Path.root
+
+
+## Cloudfront issue or js issue
+
+Cloudfront distro makes me download the mp3 files and im not sure how to make it play them instead.
+- The upside is that it randomly passes on an mp3 into the `<embed>` src attribute but sometimes it gets the file twice for some reason.
+
+- But on the local http-server, it doesnt change between the first to mp3 files in the audioFiles list. These are the first to mp3 files i added when tested code.
+
+### Why is this happening???
