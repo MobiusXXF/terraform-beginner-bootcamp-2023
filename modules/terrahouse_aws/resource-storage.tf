@@ -45,8 +45,36 @@ resource "aws_s3_object" "error_html" {
   etag = filemd5(var.error_html_filepath)
 }
 
+resource "aws_s3_object" "pre_js" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "pre.js"
+  source = var.pre_js_filepath
+  content_type = "text/javascript"
+
+  etag = filemd5(var.pre_js_filepath)
+}
+
+
+resource "aws_s3_object" "random.js" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "random.js"
+  source = var.random_js_filepath
+  content_type = "text/javascript"
+
+  etag = filemd5(var.random_js_filepath)
+}
+
+resource "aws_s3_object" "styles.css" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "styles.css"
+  source = var.styles_css_filepath
+  content_type = "text/css"
+
+  etag = filemd5(var.styles_css_filepath)
+}
+
 resource "aws_s3_object" "upload_assets" {
-  for_each = fileset("${path.root}/public/assets", "*.{jpg,png,gif,svg}")
+  for_each = fileset("${path.root}/public/assets", "*.{jpg,png,gif,svg,mp3}")
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "assets/${each.key}"
   source = "${path.root}/public/assets/${each.key}"

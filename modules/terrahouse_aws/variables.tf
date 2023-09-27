@@ -41,6 +41,36 @@ variable "error_html_filepath" {
   }
 }
 
+variable "pre_js_filepath" {
+  description = "The file path for pre.js"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.pre_js_filepath)
+    error_message = "The provided path for pre.js does not exist."
+  }
+}
+
+variable "random_js_filepath" {
+  description = "The file path for random.js"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.random_js_filepath)
+    error_message = "The provided path for random.js does not exist."
+  }
+}
+
+variable "styles_css_filepath" {
+  description = "The file path for styles.css"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.styles_css_filepath)
+    error_message = "The provided path for styles.css does not exist."
+  }
+}
+
 variable "assets_path" {
   description = "Path to assets folder"
   type = string

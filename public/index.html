@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soul</title>
-    <link rel="icon" type="image/png" href="./assets/terrahouse-icon.png">
-</head>
-<body>
-    <div align="center">
-        <h1>The Soulquarians</h1>
-        <hr>
-        <img src="./assets/sq-animated.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soul House</title>
+    <link rel="icon" type="image/png" href="./assets/terrahouse-icon.png" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="./assets/sax1.gif" alt="" />
     </div>
-</body>
+    
+    <section>
+      <embed id="bgMusic" autostart="true" type="audio/mp3" loop="true" playcount="1000" name="TheLove" src="" hidden="true">
+      <div align="center">
+        <h1>SOUL HOUSE</h1>
+        <hr class="divider" />
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
+    <label for="volumeSlider">Volume</label>
+        <h2><span class="towns-colour">-- <em>Coming</span> Soon</em> --</h2>
+        <img src="./assets/sq-animated.png" />
+      </div>
+    </section>
+
+    <!-- <script>
+      var loader = document.getElementById("preloader");
+
+      window.addEventListener("load", function () {
+        loader.style.display = "none";
+      });
+    </script> -->
+    <script src="random.js"></script>
+    <script src="pre.js"></script>
+  </body>
 </html>
