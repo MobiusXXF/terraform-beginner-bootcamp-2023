@@ -285,3 +285,6 @@ Cloudfront distro makes me download the mp3 files and im not sure how to make it
 - But on the local http-server, it doesnt change between the first to mp3 files in the audioFiles list. These are the first to mp3 files i added when tested code.
 
 ### Why is this happening???
+
+
+## Need to make volume slider functional somehow
