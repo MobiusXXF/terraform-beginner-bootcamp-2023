@@ -55,7 +55,7 @@ resource "aws_s3_object" "pre_js" {
 }
 
 
-resource "aws_s3_object" "random.js" {
+resource "aws_s3_object" "random_js" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "random.js"
   source = var.random_js_filepath
@@ -64,7 +64,7 @@ resource "aws_s3_object" "random.js" {
   etag = filemd5(var.random_js_filepath)
 }
 
-resource "aws_s3_object" "styles.css" {
+resource "aws_s3_object" "styles_css" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "styles.css"
   source = var.styles_css_filepath
