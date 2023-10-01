@@ -18,5 +18,5 @@ module "terrahouse_aws" {
   # random_js_filepath  = var.random_js_filepath
   # styles_css_filepath = var.styles_css_filepath
   # assets_path         = var.assets_path
-  content_version = var.content_version
+  # content_version = var.content_version
 }

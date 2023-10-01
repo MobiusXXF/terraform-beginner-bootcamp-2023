@@ -76,15 +76,15 @@ variable "error_html_filepath" {
 #   type        = string
 # }
 
-variable "content_version" {
-  description = "Positive integer content version starting at 1"
+# variable "content_version" {
+#   description = "Positive integer content version starting at 1"
 
-  type = number
+#   type = number
 
-  validation {
-    condition     = var.content_version > 0
-    error_message = "Content version must be a positive integer"
-  }
+#   validation {
+#     condition     = var.content_version > 0
+#     error_message = "Content version must be a positive integer"
+#   }
 
-  default = 1
-}
+#   default = 1
+# }

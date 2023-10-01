@@ -113,6 +113,6 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
   })
 }
 
-resource "terraform_data" "content_version" {
-  input = var.content_version
-}
+# resource "terraform_data" "content_version" {
+#   input = var.content_version
+# }
