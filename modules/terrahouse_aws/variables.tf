@@ -13,8 +13,8 @@ variable "bucket_name" {
   type        = string
 
   validation {
-    condition     = (
-      length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 && 
+    condition = (
+      length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 &&
       can(regex("^[a-z0-9][a-z0-9-.]*[a-z0-9]$", var.bucket_name))
     )
     error_message = "The bucket name must be between 3 and 63 characters, start and end with a lowercase letter or number, and can contain only lowercase letters, numbers, hyphens, and dots."
@@ -41,50 +41,50 @@ variable "error_html_filepath" {
   }
 }
 
-variable "pre_js_filepath" {
-  description = "The file path for pre.js"
-  type        = string
+# variable "pre_js_filepath" {
+#   description = "The file path for pre.js"
+#   type        = string
 
-  validation {
-    condition     = fileexists(var.pre_js_filepath)
-    error_message = "The provided path for pre.js does not exist."
-  }
-}
+#   validation {
+#     condition     = fileexists(var.pre_js_filepath)
+#     error_message = "The provided path for pre.js does not exist."
+#   }
+# }
 
-variable "random_js_filepath" {
-  description = "The file path for random.js"
-  type        = string
+# variable "random_js_filepath" {
+#   description = "The file path for random.js"
+#   type        = string
 
-  validation {
-    condition     = fileexists(var.random_js_filepath)
-    error_message = "The provided path for random.js does not exist."
-  }
-}
+#   validation {
+#     condition     = fileexists(var.random_js_filepath)
+#     error_message = "The provided path for random.js does not exist."
+#   }
+# }
 
-variable "styles_css_filepath" {
-  description = "The file path for styles.css"
-  type        = string
+# variable "styles_css_filepath" {
+#   description = "The file path for styles.css"
+#   type        = string
 
-  validation {
-    condition     = fileexists(var.styles_css_filepath)
-    error_message = "The provided path for styles.css does not exist."
-  }
-}
+#   validation {
+#     condition     = fileexists(var.styles_css_filepath)
+#     error_message = "The provided path for styles.css does not exist."
+#   }
+# }
 
-variable "assets_path" {
-  description = "Path to assets folder"
-  type = string
-}
+# variable "assets_path" {
+#   description = "Path to assets folder"
+#   type        = string
+# }
 
 variable "content_version" {
   description = "Positive integer content version starting at 1"
-  
-  type        = number
-  
+
+  type = number
+
   validation {
     condition     = var.content_version > 0
     error_message = "Content version must be a positive integer"
   }
 
-  default     = 1
+  default = 1
 }

@@ -3,6 +3,7 @@ bucket_name="k8688fkgmqen08nv2qn57ksyou84wh4e"
 index_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/index.html"
 error_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/error.html"
 pre_js_filepath="/workspace/terraform-beginner-bootcamp-2023/public/pre.js"
+random_js_filepath  = "/workspace/terraform-beginner-bootcamp-2023/public/random.js"
 assets_path = "/workspace/terraform-beginner-bootcamp-2023/public/assets"
 styles_css_filepath="/workspace/terraform-beginner-bootcamp-2023/public/styles.css"
 content_version=2

@@ -6,6 +6,7 @@ resource "aws_s3_bucket" "website_bucket" {
 
   tags = {
     UserUuid = var.user_uuid
+    Hello    = "world"
   }
 }
 
@@ -24,67 +25,67 @@ resource "aws_s3_bucket_website_configuration" "website_configuration" {
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object
 resource "aws_s3_object" "index_html" {
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "index.html"
-  source = var.index_html_filepath
+  bucket       = aws_s3_bucket.website_bucket.bucket
+  key          = "index.html"
+  source       = var.index_html_filepath
   content_type = "text/html"
 
   etag = filemd5(var.index_html_filepath)
   lifecycle {
     replace_triggered_by = [terraform_data.content_version.output]
-    ignore_changes = [etag]
+    ignore_changes       = [etag]
   }
 }
 
 resource "aws_s3_object" "error_html" {
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "error.html"
-  source = var.error_html_filepath
+  bucket       = aws_s3_bucket.website_bucket.bucket
+  key          = "error.html"
+  source       = var.error_html_filepath
   content_type = "text/html"
 
   etag = filemd5(var.error_html_filepath)
 }
 
-resource "aws_s3_object" "pre_js" {
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "pre.js"
-  source = var.pre_js_filepath
-  content_type = "text/javascript"
+# resource "aws_s3_object" "pre_js" {
+#   bucket       = aws_s3_bucket.website_bucket.bucket
+#   key          = "pre.js"
+#   source       = var.pre_js_filepath
+#   content_type = "text/javascript"
 
-  etag = filemd5(var.pre_js_filepath)
-}
+#   etag = filemd5(var.pre_js_filepath)
+# }
 
 
-resource "aws_s3_object" "random_js" {
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "random.js"
-  source = var.random_js_filepath
-  content_type = "text/javascript"
+# resource "aws_s3_object" "random_js" {
+#   bucket       = aws_s3_bucket.website_bucket.bucket
+#   key          = "random.js"
+#   source       = var.random_js_filepath
+#   content_type = "text/javascript"
 
-  etag = filemd5(var.random_js_filepath)
-}
+#   etag = filemd5(var.random_js_filepath)
+# }
 
-resource "aws_s3_object" "styles_css" {
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "styles.css"
-  source = var.styles_css_filepath
-  content_type = "text/css"
+# resource "aws_s3_object" "styles_css" {
+#   bucket       = aws_s3_bucket.website_bucket.bucket
+#   key          = "styles.css"
+#   source       = var.styles_css_filepath
+#   content_type = "text/css"
 
-  etag = filemd5(var.styles_css_filepath)
-}
+#   etag = filemd5(var.styles_css_filepath)
+# }
 
-resource "aws_s3_object" "upload_assets" {
-  for_each = fileset("${path.root}/public/assets", "*.{jpg,png,gif,svg,mp3}")
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "assets/${each.key}"
-  source = "${path.root}/public/assets/${each.key}"
+# resource "aws_s3_object" "upload_assets" {
+#   for_each = fileset("${path.root}/public/assets", "*.{jpg,png,gif,svg,mp3}")
+#   bucket   = aws_s3_bucket.website_bucket.bucket
+#   key      = "assets/${each.key}"
+#   source   = "${path.root}/public/assets/${each.key}"
 
-  etag = filemd5("${path.root}/public/assets/${each.key}")
-  lifecycle {
-    replace_triggered_by = [terraform_data.content_version.output]
-    ignore_changes = [etag]
-  }
-}
+#   etag = filemd5("${path.root}/public/assets/${each.key}")
+#   lifecycle {
+#     replace_triggered_by = [terraform_data.content_version.output]
+#     ignore_changes       = [etag]
+#   }
+# }
 
 # https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-cloudfront-introduces-origin-access-control-oac/
 resource "aws_s3_bucket_policy" "bucket_policy" {
@@ -94,20 +95,20 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
   policy = jsonencode({
     "Version" = "2012-10-17",
     "Statement" = {
-      "Sid" = "AllowCloudFrontServicePrincipalReadOnly",
+      "Sid"    = "AllowCloudFrontServicePrincipalReadOnly",
       "Effect" = "Allow",
       "Principal" = {
         "Service" = "cloudfront.amazonaws.com"
       },
-      "Action" = "s3:GetObject",
+      "Action"   = "s3:GetObject",
       "Resource" = "arn:aws:s3:::${aws_s3_bucket.website_bucket.id}/*",
-      "Condition" = {
-      "StringEquals" = {
-          # https://developer.hashicorp.com/terraform/language/data-sources
-          #"AWS:SourceArn": data.aws_caller_identity.current.arn
-          "AWS:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.s3_distribution.id}"
-        }
-      }
+      # "Condition" = {
+      # "StringEquals" = {
+      #     # https://developer.hashicorp.com/terraform/language/data-sources
+      #     #"AWS:SourceArn": data.aws_caller_identity.current.arn
+      #     "AWS:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.s3_distribution.id}"
+      #   }
+      # }
     }
   })
 }
