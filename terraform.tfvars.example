@@ -7,3 +7,4 @@ random_js_filepath  = "/workspace/terraform-beginner-bootcamp-2023/public/random
 assets_path = "/workspace/terraform-beginner-bootcamp-2023/public/assets"
 styles_css_filepath="/workspace/terraform-beginner-bootcamp-2023/public/styles.css"
 content_version=2
+For VCS
