@@ -12,3 +12,11 @@ output "s3_website_endpoint" {
 #   description = "The CloudFront Distribution Domain Name"
 #   value = module.terrahouse_aws.cloudfront_url
 # }
+
+locals {
+  root_path = path.root
+}
+
+output "root_path" {
+  value = local.root_path
+}
