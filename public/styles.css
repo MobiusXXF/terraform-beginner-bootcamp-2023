@@ -10,7 +10,7 @@ body {
 }
 
 .loader {
-    background: #000;
+    background: #4B0E98;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -21,7 +21,7 @@ body {
 }
 
 .loader img {
-    height: 100vh;
+
     width: 100vw;
 
 }
@@ -69,6 +69,7 @@ section h2 {
 }
 
 section img {
+
     width: 65vw;
 }
 
