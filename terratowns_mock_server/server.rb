@@ -203,10 +203,11 @@ class TerraTownsMockServer < Sinatra::Base
 
     home = Home.new
     home.town = $home[:town]
+    home.domain_name = $home[:domain_name]
     home.name = name
     home.description = description
-    home.domain_name = domain_name
     home.content_version = content_version
+    # binding.pry
 
     unless home.valid?
       error 422, home.errors.messages.to_json
@@ -222,14 +223,15 @@ class TerraTownsMockServer < Sinatra::Base
     puts "# delete - DELETE /api/homes/:uuid"
     content_type :json
 
-    # delete from our mock database
-
+    
     if params[:uuid] != $home[:uuid]
       error 404, "failed to find home with provided uuid and bearer token"
     end
-
+    
+    # delete from our mock database
+    uuid = $home[:uuid]
     $home = {}
-    { message: "House deleted successfully" }.to_json
+    { uuid: uuid }.to_json
   end
 end
 
