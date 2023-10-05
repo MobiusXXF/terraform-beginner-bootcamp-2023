@@ -127,7 +127,7 @@ func Resource() *schema.Resource {
 	log.Print("Resource:start")
 	return resource
 }
-
+https://mobiusxxf-terraformbegi-8nixdz9oicf.ws-eu105.gitpod.io/
 func resourceHouseCreate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	log.Print("resourceHouseCreate:start")
 	var diags diag.Diagnostics
