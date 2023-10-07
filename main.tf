@@ -44,6 +44,6 @@ Made up of prominent black artists of the 90s and early 2000s, such as
 Q-Tip, Erykah Badu, Blackthought, Yasiin Bey, Talib Kweli, Common, Pino Palladino and Roy Hargrove.
 DESCRIPTION
   domain_name = module.terrahouse_aws.cloudfront_url
-  town = "missingo"
-  content_version = 1
+  town = "melomaniac-mansion"
+  content_version = 2
 }
