@@ -24,6 +24,6 @@ The `/journal` directory contains:
 - [••>] [Week 2 - Connecting to **TerraTowns**](journal/week2.md)
 - [ ] <strong>Extra</strong><sup>3</sup> - Decorating Terrahouse in [**Melomaniac Mansion**](https://terratowns.cloud/t/melomaniac-mansion)
 
-## Coming Soon
+## Terrahouse Preview:
 
-![Soul House Preview](assets/th-preview.png)
+![Soul House Preview](https://raw.githubusercontent.com/MobiusXXF/aws-bootcamp-cruddur-2023/main/journal/assets/coming-soon.png)
