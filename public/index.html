@@ -4,34 +4,115 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soul House</title>
-    <meta name="description" content="Dive In With The Soulquarians" />
-    <meta name="keywords" content="Terratowns, Melomaniac Mansion, Terrahouse, Soul House, Soul Music, The Soulquarians" />
-    <meta name="author" content="TheDevAnt" />
     <link rel="icon" type="image/png" href="./assets/terrahouse-icon.png" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./src/styles.css" />
     <script src="https://kit.fontawesome.com/6ca74463c4.js" crossorigin="anonymous"></script>
   </head>
+
   <body>
     <div class="loader">
-      <img src="./assets/sax1.gif" alt="Loading..." />
+      <img src="./assets/sax1.gif" alt="" />
     </div>
     
-    <section>
+    <section id="intro-page">
       <div align="center">
-        <h1>SOUL HOUSE</h1>
-        <hr class="divider" />
+        <div id="title">
+          <h1>SOUL HOUSE</h1>
+          <hr class="divider" />
+        </div>
         <span>
-          <audio controls id="bgMusic" name="Dive in with the Soulquarians" muted="true" autoplay="true" type="audio/mp3" src="">
+          <!-- Loop is "false" by default. You can only explicitly set loop="true", even "false" keeps it true. -->
+          <audio controls  id="bgMusic" name="Dive in with the Soulquarians" muted="true" autoplay="true" type="audio/mp3" src="assets/the-light.mp3">
           <i class="fa-solid fa-volume-off"></i>
         <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
         <i class="fa-solid fa-volume-high"></i>
       </span>
-        <h2><span class="towns-colour">-- <em>Coming</span> Soon</em> --</h2>
-        <img src="./assets/sq-animated.png" />
+      <a href="#main-content"><h2><span class="towns-colour">-- <em>Coming</span> Soon</em> --</h2></a>
+      </div>
+      <div class="center_piece">
+        <div class="card" data-color="yellow">
+          <img class="card-front-image card-image" src="assets/sq-animated.png" />
+          <div class="card-faders">
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <img class="card-fader card-image" src="assets/sq-animated.png" />
+          </div>
+        </div>
+        <!-- <span id="intro-scroll-down">
+          <img src="assets/scroll-down.png" alt="">
+        </span> -->
       </div>
     </section>
+    
+    <section id="main-content">
+      <div id="cards-desc">
+        <div>
+          <span id="c1" class="hidden">
+            <h1>LIKE WATER FOR CHOCOLATE</h1>
+            <H3>Common</H3>
+          </span>
+          <img class="artist-card" src="assets/clwfc.webp" alt="">
+        </div>
 
-    <script src="random.js"></script>
+        <div>
+          <span id="c2" class="hidden">
+            <h1>MAMA'S GUN</h1>
+            <H3>Erykah Badu</H3>
+          </span>
+          <img class="artist-card" src="assets/mg.png" alt="">
+
+        </div>
+        <div>
+          <span id="c3" class="hidden">
+            <h1>FANTASTIC VOL.2</h1>
+            <H3>Slum Village</H3>
+          </span>
+          <img class="artist-card" src="assets/sv-f2.webp" alt="">
+        </div>
+
+        <div>
+          <span id="c4" class="hidden">
+            <h1>THINGS FALL APART</h1>
+            <H3>The Roots</H3>
+          </span>
+          <img class="artist-card" src="assets/roots.png" alt="">
+        </div>
+
+        <div>
+          <span id="c5" class="hidden">
+            <h1>AMPLIFIED</h1>
+            <H3>Q-Tip</H3>
+          </span>
+          <img class="artist-card" src="assets/qt-amp.png" alt="">
+        </div>
+
+        <div>
+          <span id="c6" class="hidden">
+            <h1>BLACK ON BOTH SIDES</h1>
+            <H3>Mos Def (aka Yasiin Bey)</H3>
+          </span>
+          <img class="artist-card" src="assets/bobs.webp" alt="">
+
+        </div>
+
+        <div>
+          <span id="c7" class="hidden">
+            <h1>VOODOO</h1>
+            <H3>D'Angelo</H3>
+          </span>
+          <img class="artist-card" src="assets/d_angelo.webp" alt="">
+        </div>
+
+      </div>
+      <a href="#intro-page" id="back-up"><h1>^^Back To The Top^^</h1></a>
+    </section>
+  
+    <!-- <script src="random.js"></script> -->
     <script src="pre.js"></script>
   </body>
 </html>
