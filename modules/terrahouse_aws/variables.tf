@@ -21,69 +21,27 @@ variable "bucket_name" {
   }
 }
 
-variable "index_html_filepath" {
-  description = "The file path for index.html"
+variable "public_path" {
+  description = "The file path for public directory"
   type        = string
-
-  validation {
-    condition     = fileexists(var.index_html_filepath)
-    error_message = "The provided path for index.html does not exist."
-  }
-}
-
-variable "error_html_filepath" {
-  description = "The file path for error.html"
-  type        = string
-
-  validation {
-    condition     = fileexists(var.error_html_filepath)
-    error_message = "The provided path for error.html does not exist."
-  }
 }
 
 variable "pre_js_filepath" {
   description = "The file path for pre.js"
   type        = string
-
-  validation {
-    condition     = fileexists(var.pre_js_filepath)
-    error_message = "The provided path for pre.js does not exist."
-  }
+  default = "null"
 }
 
 variable "random_js_filepath" {
   description = "The file path for random.js"
   type        = string
-
-  validation {
-    condition     = fileexists(var.random_js_filepath)
-    error_message = "The provided path for random.js does not exist."
-  }
+  default = "null"
 }
 
 variable "infinity_js_filepath" {
   description = "The file path for infinity.js"
   type        = string
-
-  validation {
-    condition     = fileexists(var.infinity_js_filepath)
-    error_message = "The provided path for infinity.js does not exist."
-  }
-}
-
-variable "styles_css_filepath" {
-  description = "The file path for styles.css"
-  type        = string
-
-  validation {
-    condition     = fileexists(var.styles_css_filepath)
-    error_message = "The provided path for styles.css does not exist."
-  }
-}
-
-variable "assets_path" {
-  description = "Path to assets folder"
-  type = string
+  default = "null"
 }
 
 variable "content_version" {

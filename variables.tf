@@ -14,34 +14,35 @@ variable "bucket_name" {
   type = string
 }
 
-variable "index_html_filepath" {
-  type = string
+variable "soul" {
+  type = object({
+    public_path = string
+    content_version = number
+})  
 }
 
-variable "error_html_filepath" {
-  type = string
+variable "flags" {
+  type = object({
+    public_path = string
+    content_version = number
+})  
 }
 
 variable "pre_js_filepath" {
   type = string
+  default = "null"
 }
 
 variable "random_js_filepath" {
   type = string
+  default = "null"
 }
 
 variable "infinity_js_filepath" {
   type = string
+  default = "null"
 }
 
-variable "styles_css_filepath" {
-  type = string
-}
-
-variable "assets_path" {
-  description = "Path to assets folder"
-  type        = string
-}
 
 variable "content_version" {
   description = "Positive integer content version starting at 1"
