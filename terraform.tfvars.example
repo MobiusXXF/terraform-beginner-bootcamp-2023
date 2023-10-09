@@ -8,4 +8,4 @@ random_js_filepath="/workspace/terraform-beginner-bootcamp-2023/public/random.js
 infinity_js_filepath="/workspace/terraform-beginner-bootcamp-2023/public/infinity.js"
 assets_path = "/workspace/terraform-beginner-bootcamp-2023/public/assets"
 styles_css_filepath="/workspace/terraform-beginner-bootcamp-2023/public/styles.css"
-content_version=2
+content_version=4

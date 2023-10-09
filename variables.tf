@@ -40,11 +40,11 @@ variable "styles_css_filepath" {
 
 variable "assets_path" {
   description = "Path to assets folder"
-  type = string
+  type        = string
 }
 
 variable "content_version" {
   description = "Positive integer content version starting at 1"
-  
-  type        = number
+
+  type = number
 }
