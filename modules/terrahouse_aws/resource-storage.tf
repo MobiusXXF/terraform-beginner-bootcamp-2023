@@ -26,10 +26,10 @@ resource "aws_s3_bucket_website_configuration" "website_configuration" {
 resource "aws_s3_object" "index_html" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "index.html"
-  source = var.index_html_filepath
+  source = "${var.public_path}/index.html"
   content_type = "text/html"
 
-  etag = filemd5(var.index_html_filepath)
+  etag = filemd5("${var.public_path}/index.html")
   lifecycle {
     replace_triggered_by = [terraform_data.content_version.output]
     ignore_changes = [etag]
@@ -39,10 +39,10 @@ resource "aws_s3_object" "index_html" {
 resource "aws_s3_object" "error_html" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "error.html"
-  source = var.error_html_filepath
+  source = "${var.public_path}/error.html"
   content_type = "text/html"
 
-  etag = filemd5(var.error_html_filepath)
+  etag = filemd5("${var.public_path}/error.html")
 }
 
 resource "aws_s3_object" "pre_js" {
@@ -76,19 +76,19 @@ resource "aws_s3_object" "infinity_js" {
 resource "aws_s3_object" "styles_css" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "styles.css"
-  source = var.styles_css_filepath
+  source = "${var.public_path}/styles.css"
   content_type = "text/css"
 
-  etag = filemd5(var.styles_css_filepath)
+  etag = filemd5("${var.public_path}/styles.css")
 }
 
 resource "aws_s3_object" "upload_assets" {
-  for_each = fileset("${path.root}/public/assets", "*.{jpg,png,gif,svg,webp,mp3}")
+  for_each = fileset("${var.public_path}/assets", "*.{jpg,png,gif,svg,webp,mp3}")
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "assets/${each.key}"
-  source = "${path.root}/public/assets/${each.key}"
+  source = "${var.public_path}/assets/${each.key}"
 
-  etag = filemd5("${path.root}/public/assets/${each.key}")
+  etag = filemd5("${var.public_path}/assets/${each.key}")
   lifecycle {
     replace_triggered_by = [terraform_data.content_version.output]
     ignore_changes = [etag]

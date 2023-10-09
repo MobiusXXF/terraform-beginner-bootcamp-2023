@@ -1,0 +1,83 @@
+body {
+    background-color: rgb(216, 216, 228);
+    height: auto;
+    width: auto;
+}
+
+div {
+    height: auto;
+    width: 250px;
+}
+/* Germany */
+div.flag1 {
+    padding: 0px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 75px;
+    
+}
+
+div#ger {
+    display: grid;
+    height: 150px;
+}
+
+div#ger1 {
+    background-color: black;
+}
+div#ger2 {
+    background-color: red;
+}
+div#ger3 {
+    background-color: yellow;
+}
+
+/* France */
+div.flag2 {
+    padding: 0px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 150px;
+    
+}
+
+div#fr {
+    display: flex;
+    height: 150px;
+}
+
+div#fr1 {
+    background-color: blue;
+}
+div#fr2 {
+    background-color: white;
+}
+div#fr3 {
+    background-color: red;
+}
+
+/* implementing flag switch feature - Ger-Hungary*/
+
+div#ger:hover > div#ger1 {
+    background-color: red;
+}
+div#ger:hover > div#ger2 {
+    background-color: white;
+}
+div#ger:hover > div#ger3 {
+    background-color: green;
+}
+
+/* implement flag switch feature - Fr-Ireland */
+
+div#fr:hover > div#fr1 {
+    background-color: green;
+}
+div#fr:hover > div#fr2 {
+    background-color: white;
+}
+div#fr:hover > div#fr3 {
+    background-color: orange;
+} 
