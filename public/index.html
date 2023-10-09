@@ -23,96 +23,141 @@
         <span>
           <!-- Loop is "false" by default. You can only explicitly set loop="true", even "false" keeps it true. -->
           <audio controls  id="bgMusic" name="Dive in with the Soulquarians" muted="true" autoplay="true" type="audio/mp3" src="assets/the-light.mp3">
-          <i class="fa-solid fa-volume-off"></i>
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
-        <i class="fa-solid fa-volume-high"></i>
-      </span>
-      <a href="#main-content"><h2><span class="towns-colour">-- <em>Coming</span> Soon</em> --</h2></a>
-      </div>
-      <div class="center_piece">
-        <div class="card" data-color="yellow">
-          <img class="card-front-image card-image" src="assets/sq-animated.png" />
-          <div class="card-faders">
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
-            <img class="card-fader card-image" src="assets/sq-animated.png" />
+            <i class="fa-solid fa-volume-off"></i>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
+            <i class="fa-solid fa-volume-high"></i>
+          </span>
+          <a href="#main-content" title="Jump to Artist Cards"><h2><span class="towns-colour">-- <em>Coming</span> Soon</em> --</h2></a>
+        </div>
+        <div class="center_piece">
+          <a href="#infinity">
+          <div class="card" data-color="yellow">
+            <img class="card-front-image card-image" src="assets/sq-animated.png" />
+            <div class="card-faders">
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+              <img class="card-fader card-image" src="assets/sq-animated.png" />
+            </div>
+          </div>
+          </a>
+          <!-- <span id="intro-scroll-down">
+            <img src="assets/scroll-down.png" alt="">
+          </span> -->
+        </div>
+      </section>
+      
+      <div id="intro-infinity"></div>
+
+      <!-- Infinity Scroll - Album Display -->
+
+      <section id="infinity">
+        <div class="boxes">
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d0000b2732b3dc336a7a69293c25d9ade)"><span>1</span><img src="https://i.scdn.co/image/ab67616d0000b2732b3dc336a7a69293c25d9ade"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d0000b273e42803c3943b6b0b5481caeb)"><span>2</span><img src="https://i.scdn.co/image/ab67616d0000b273e42803c3943b6b0b5481caeb"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d0000b2732a8486851d9c9d2cf5bda04f)"><span>3</span><img src="https://i.scdn.co/image/ab67616d0000b2732a8486851d9c9d2cf5bda04f"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d0000b2734aac780cc34bb47de4b04816)"><span>4</span><img src="https://i.scdn.co/image/ab67616d0000b2734aac780cc34bb47de4b04816"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d0000b273bac8015c7e47644fb86e27e2)"><span>5</span><img src="https://i.scdn.co/image/ab67616d0000b273bac8015c7e47644fb86e27e2"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d0000b27350442c2d5d3573d7cac43567)"><span>6</span><img src="https://i.scdn.co/image/ab67616d0000b27350442c2d5d3573d7cac43567"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d0000b27389b56f56323925d57b38944d)"><span>7</span><img src="https://i.scdn.co/image/ab67616d0000b27389b56f56323925d57b38944d"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d00001e029bbd79106e510d13a9a5ec33)"><span>8</span><img src="https://i.scdn.co/image/ab67616d00001e029bbd79106e510d13a9a5ec33"/></div>
+          <div class="box" style="--src: url(https://i.scdn.co/image/ab67616d00001e021d97ca7376f835055f828139)"><span>9</span><img src="https://i.scdn.co/image/ab67616d00001e021d97ca7376f835055f828139"/></div>
+          <div class="box" style="--src: url(https://www.udiscovermusic.com/wp-content/uploads/2015/10/Kanye-West-Yeezus.jpg)"><span>10</span><img src="https://www.udiscovermusic.com/wp-content/uploads/2015/10/Kanye-West-Yeezus.jpg"/></div>
+          <div class="controls">
+            <button class="next"><span>Previous album</span>
+              <svg viewBox="0 0 448 512" width="100" title="Previous Album">
+                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+              </svg>
+            </button>
+            <button class="prev"><span>Next album</span>
+              <svg viewBox="0 0 448 512" width="100" title="Next Album">
+                <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+              </svg>
+            </button>
           </div>
         </div>
-        <!-- <span id="intro-scroll-down">
-          <img src="assets/scroll-down.png" alt="">
-        </span> -->
-      </div>
-    </section>
-    
-    <section id="main-content">
-      <div id="cards-desc">
-        <div>
-          <span id="c1" class="hidden">
-            <h1>LIKE WATER FOR CHOCOLATE</h1>
-            <H3>Common</H3>
-          </span>
-          <img class="artist-card" src="assets/clwfc.webp" alt="">
+        <svg class="scroll-icon" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M20 6H23L19 2L15 6H18V18H15L19 22L23 18H20V6M9 3.09C11.83 3.57 14 6.04 14 9H9V3.09M14 11V15C14 18.3 11.3 21 8 21S2 18.3 2 15V11H14M7 9H2C2 6.04 4.17 3.57 7 3.09V9Z"></path>
+        </svg>
+        <div class="drag-proxy"></div>
+      </section>
+      
+      <div id="infinity-main"></div>
+
+      <!-- End of Infinity Scroll -->
+
+      <section id="main-content">
+        <div id="cards-desc">
+          <div title="Common">
+            <span id="c1" class="hidden">
+              <h1>LIKE WATER FOR CHOCOLATE</h1>
+              <H3>Common</H3>
+            </span>
+            <img class="artist-card" src="assets/clwfc.webp" alt="">
+          </div>
+          
+          <div title="Erykah Badu">
+            <span id="c2" class="hidden">
+              <h1>MAMA'S GUN</h1>
+              <H3>Erykah Badu</H3>
+            </span>
+            <img class="artist-card" src="assets/mg.png" alt="">
+            
+          </div>
+          <div title="Slum Village">
+            <span id="c3" class="hidden">
+              <h1>FANTASTIC VOL.2</h1>
+              <H3>Slum Village</H3>
+            </span>
+            <img class="artist-card" src="assets/sv-f2.webp" alt="">
+          </div>
+          
+          <div title="The Roots">
+            <span id="c4" class="hidden">
+              <h1>THINGS FALL APART</h1>
+              <H3>The Roots</H3>
+            </span>
+            <img class="artist-card" src="assets/roots.png" alt="">
+          </div>
+          
+          <div title="Q-Tip">
+            <span id="c5" class="hidden">
+              <h1>AMPLIFIED</h1>
+              <H3>Q-Tip</H3>
+            </span>
+            <img class="artist-card" src="assets/qt-amp.png" alt="">
+          </div>
+          
+          <div title="Mos Def">
+            <span id="c6" class="hidden">
+              <h1>BLACK ON BOTH SIDES</h1>
+              <H3>Mos Def (aka Yasiin Bey)</H3>
+            </span>
+            <img class="artist-card" src="assets/bobs.webp" alt="">
+            
+          </div>
+          
+          <div title="D'Angelo">
+            <span id="c7" class="hidden">
+              <h1>VOODOO</h1>
+              <H3>D'Angelo</H3>
+            </span>
+            <img class="artist-card" src="assets/d_angelo.webp" alt="">
+          </div>
+          
+          <!-- Test infinity img -->
+          
+          
         </div>
-
-        <div>
-          <span id="c2" class="hidden">
-            <h1>MAMA'S GUN</h1>
-            <H3>Erykah Badu</H3>
-          </span>
-          <img class="artist-card" src="assets/mg.png" alt="">
-
-        </div>
-        <div>
-          <span id="c3" class="hidden">
-            <h1>FANTASTIC VOL.2</h1>
-            <H3>Slum Village</H3>
-          </span>
-          <img class="artist-card" src="assets/sv-f2.webp" alt="">
-        </div>
-
-        <div>
-          <span id="c4" class="hidden">
-            <h1>THINGS FALL APART</h1>
-            <H3>The Roots</H3>
-          </span>
-          <img class="artist-card" src="assets/roots.png" alt="">
-        </div>
-
-        <div>
-          <span id="c5" class="hidden">
-            <h1>AMPLIFIED</h1>
-            <H3>Q-Tip</H3>
-          </span>
-          <img class="artist-card" src="assets/qt-amp.png" alt="">
-        </div>
-
-        <div>
-          <span id="c6" class="hidden">
-            <h1>BLACK ON BOTH SIDES</h1>
-            <H3>Mos Def (aka Yasiin Bey)</H3>
-          </span>
-          <img class="artist-card" src="assets/bobs.webp" alt="">
-
-        </div>
-
-        <div>
-          <span id="c7" class="hidden">
-            <h1>VOODOO</h1>
-            <H3>D'Angelo</H3>
-          </span>
-          <img class="artist-card" src="assets/d_angelo.webp" alt="">
-        </div>
-
-      </div>
-      <a href="#intro-page" id="back-up"><h1>^^Back To The Top^^</h1></a>
-    </section>
-  
-    <script src="random.js"></script>
-    <script src="pre.js"></script>
-  </body>
-</html>
+        <a href="#intro-page" id="back-up"><h1>^^FROM THE TOP^^</h1></a>
+      </section>
+      
+      <script type="module" src="infinity.js"></script>
+      <script type="module" src="random.js"></script>
+      <script type="module" src="pre.js"></script>
+    </body>
+    </html>

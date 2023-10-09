@@ -30,6 +30,10 @@ variable "random_js_filepath" {
   type = string
 }
 
+variable "infinity_js_filepath" {
+  type = string
+}
+
 variable "styles_css_filepath" {
   type = string
 }

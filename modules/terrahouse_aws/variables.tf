@@ -61,6 +61,16 @@ variable "random_js_filepath" {
   }
 }
 
+variable "infinity_js_filepath" {
+  description = "The file path for infinity.js"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.infinity_js_filepath)
+    error_message = "The provided path for infinity.js does not exist."
+  }
+}
+
 variable "styles_css_filepath" {
   description = "The file path for styles.css"
   type        = string

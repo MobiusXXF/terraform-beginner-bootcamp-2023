@@ -64,6 +64,15 @@ resource "aws_s3_object" "random_js" {
   etag = filemd5(var.random_js_filepath)
 }
 
+resource "aws_s3_object" "infinity_js" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "infinity.js"
+  source = var.infinity_js_filepath
+  content_type = "text/javascript"
+
+  etag = filemd5(var.infinity_js_filepath)
+}
+
 resource "aws_s3_object" "styles_css" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "styles.css"

@@ -28,6 +28,7 @@ module "terrahouse_aws" {
   error_html_filepath = var.error_html_filepath
   pre_js_filepath     = var.pre_js_filepath
   random_js_filepath  = var.random_js_filepath
+  infinity_js_filepath  = var.infinity_js_filepath
   styles_css_filepath = var.styles_css_filepath
   assets_path         = var.assets_path
   content_version     = var.content_version
