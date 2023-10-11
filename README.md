@@ -28,6 +28,6 @@ The `/journal` directory contains:
 
 ![Terratowns](./assets/tt-overview.png)
 
-## Terrahouse Preview
+## [Terrahouse Preview](https://terratowns.cloud/h/bf6e6418-bdd0-42f8-a985-153b5dfd5901)
 
 ![Soul House Preview](./assets/th-preview.png)
