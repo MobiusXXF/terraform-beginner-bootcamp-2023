@@ -60,7 +60,7 @@ module "flags_house_hosting" {
 resource "terratowns_home" "css_flags" {
   name            = "A Little CSS"
   description     = <<DESCRIPTION
-This was the one first CSS design I remember that made me so happy to figure out. Simple but at the time I felt like a genius. 
+This was the first CSS design I remember that made me so happy to figure out. Simple but at the time I felt like a genius. 
 DESCRIPTION
   domain_name     = module.flags_house_hosting.cloudfront_url
   town            = "missingo"

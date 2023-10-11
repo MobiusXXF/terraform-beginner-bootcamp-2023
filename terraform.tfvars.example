@@ -4,10 +4,10 @@ bucket_name="k8688fkgmqen08nv2qn57ksyou84wh4e"
 pre_js_filepath="/workspace/terraform-beginner-bootcamp-2023/public/soul/pre.js"
 random_js_filepath="/workspace/terraform-beginner-bootcamp-2023/public/soul/random.js"
 infinity_js_filepath="/workspace/terraform-beginner-bootcamp-2023/public/soul/infinity.js"
-content_version=3
+content_version=4
 soul = {
     public_path = "/workspace/terraform-beginner-bootcamp-2023/public/soul"
-    content_version = 2
+    content_version = 3
 }
 flags = {
   public_path = "/workspace/terraform-beginner-bootcamp-2023/public/flags"

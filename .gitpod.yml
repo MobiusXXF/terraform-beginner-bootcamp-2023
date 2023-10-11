@@ -6,6 +6,7 @@ tasks:
       source ./bin/generate_tfrc_credentials
       cp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
       source ./bin/build_provider
+      cd ..
   - name: sinatra
     init: |
       cd terratowns_mock_server
