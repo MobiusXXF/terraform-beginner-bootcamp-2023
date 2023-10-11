@@ -21,9 +21,13 @@ The `/journal` directory contains:
 - [x] [Introduction](#terraform-beginner-bootcamp-2023)
 - [x] [Week 0 - Project Preparation](journal/week0.md)
 - [x] [Week 1 - Building **Terrahouse**](journal/week1.md)
-- [••>] [Week 2 - Connecting to **TerraTowns**](journal/week2.md)
-- [ ] <strong>Extra</strong><sup>3</sup> - Decorating Terrahouse in [**Melomaniac Mansion**](https://terratowns.cloud/t/melomaniac-mansion)
+- [x] [Week 2 - Connecting to **TerraTowns**](journal/week2.md)
+- [••>] <strong>Extra</strong><sup>3</sup> - Decorating Terrahouse in [**Melomaniac Mansion**](https://terratowns.cloud/t/melomaniac-mansion)
 
-## Terrahouse Preview:
+## [Terratowns Platform](https://terratowns.cloud)
 
-![Soul House Preview](https://raw.githubusercontent.com/MobiusXXF/aws-bootcamp-cruddur-2023/main/journal/assets/coming-soon.png)
+![Terratowns](./assets/tt-overview.png)
+
+## Terrahouse Preview
+
+![Soul House Preview](./assets/th-preview.png)

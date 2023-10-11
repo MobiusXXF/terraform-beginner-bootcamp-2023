@@ -1,8 +1,21 @@
 # Week 2 - Connecting to TerraTowns
 <ins>Table of Contents</ins>
 - []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
 
-## Working with Ruby
+## Introduction to Ruby
 
 ### Bundler
 
@@ -51,8 +64,26 @@ bundle exec ruby server.rb
 
 All of the code for our server is stored in the `server.rb` file.
 
-## CRUD
+### Terratowns Mock Web Server
+
+
+## Introduction to Golang
+
+
+### Custom Terraform Provider
+
+
+### Implementing CRUD
 Terraform Provider resources utilise CRUD.
 
 CRUD stands for Create, Read, Update and Delete.
 
+## Deploying to Terratowns
+
+
+## Multi-House Refactor
+
+
+## Terratown and Terrahouse Diagram
+
+![TerraTowns Architectural Diagran](./assets/week2-tt-diagram.svg)

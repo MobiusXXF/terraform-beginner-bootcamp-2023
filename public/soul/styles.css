@@ -369,7 +369,7 @@ audio {
     padding: 0;
     margin: 0;
     background: var(--bg);
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .drag-proxy {

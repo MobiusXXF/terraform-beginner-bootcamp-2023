@@ -113,19 +113,19 @@ const START_TIME = CYCLE_DURATION + DURATION * 0.5 + OFFSET;
 
 // Commenting out loop stops scroll reset
 
-// const LOOP_HEAD = gsap.fromTo(
-//   LOOP,
-//   {
-//     totalTime: START_TIME,
-//   },
-//   {
-//     totalTime: `+=${CYCLE_DURATION}`,
-//     duration: 1,
-//     ease: "none",
-//     repeat: -1,
-//     paused: true,
-//   }
-// );
+const LOOP_HEAD = gsap.fromTo(
+  LOOP,
+  {
+    totalTime: START_TIME,
+  },
+  {
+    totalTime: `+=${CYCLE_DURATION}`,
+    duration: 1,
+    ease: "none",
+    repeat: -1,
+    paused: true,
+  }
+);
 
 const PLAYHEAD = {
   position: 0,
