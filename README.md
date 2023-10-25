@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Terraform Beginner Bootcamp 2023</h1>
-  <h3>Welcome to my humble <em>TerraHouse</em><sup>𝛼</sup></h2>
+  <h3>Welcome to my humble <a href="https://terratowns.cloud/h/bf6e6418-bdd0-42f8-a985-153b5dfd5901"><em>TerraHouse</em><sup>𝛼</sup></a></h2>
 </div>
 
 <div align="center">
