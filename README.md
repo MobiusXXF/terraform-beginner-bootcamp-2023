@@ -22,7 +22,7 @@ The `/journal` directory contains:
 - [x] [Week 0 - Project Preparation](journal/week0.md)
 - [x] [Week 1 - Building **Terrahouse**](journal/week1.md)
 - [x] [Week 2 - Connecting to **TerraTowns**](journal/week2.md)
-- [••>] <strong>Extra</strong><sup>3</sup> - Decorating Terrahouse in [**Melomaniac Mansion**](https://terratowns.cloud/t/melomaniac-mansion)
+- [x] <strong>Extra</strong><sup>3</sup> - Decorating Terrahouse in [**Melomaniac Mansion**](https://terratowns.cloud/t/melomaniac-mansion)
 
 ## [Terratowns Platform](https://terratowns.cloud)
 
