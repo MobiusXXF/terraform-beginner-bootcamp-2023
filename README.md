@@ -12,7 +12,7 @@
 - [Bootcamp Learning Portal](https://app.exampro.co/student/journey/terraform-cpb)
 - [Project Template](https://github.com/ExamProCo/terraform-beginner-bootcamp-2023) from ExamProCo.
 - Obtained the [Terraform Associate 003](https://www.hashicorp.com/certification/terraform-associate) on 1st Sep 2023, now on to the Terraform Beginner Bootcamp to apply knowledge.
-- --Awaiting Completion--
+- Bootcamp Complete: [View Certificate](https://www.linkedin.com/in/anthonyadesanwo/overlay/1635545622609/single-media-viewer/?profileId=ACoAADdjtGMBnQNNMWIpESWjnpa7tvx3vjJTl9k)
 
 ## Journaling Homework
 
