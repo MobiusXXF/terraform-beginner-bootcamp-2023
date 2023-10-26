@@ -34,4 +34,4 @@ The `/journal` directory contains:
 
 ## Offical House Viewing
 
-<iframe title="Soul House" src="https://www.veed.io/embed/c2aa8daa-2177-4de4-85fd-6bd92999994e" width="744" height="504" frameborder="0" title="Soul House" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+![Soul House](/assets/house-viewing.gif)
