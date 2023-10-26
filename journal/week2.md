@@ -5,7 +5,7 @@
     - [Install Gems](#install-gems)
     - [Executing Ruby scripts w/ bundler](#executing-ruby-scripts-w-bundler)
     - [Sinatra](#sinatra)
-- [Terratowns Mock Web Server](#terratowns-mock-server)
+- [Terratowns Mock Web Server](#terratowns-mock-web-server)
     - [Running the Web Server](#running-the-web-server)
 - [Introduction to Golang](#introduction-to-golang)
     - [Custom Terraform Provider](#custom-terraform-provider)
