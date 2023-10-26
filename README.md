@@ -33,5 +33,6 @@ The `/journal` directory contains:
 ![Soul House Preview](./assets/th-preview.png)
 
 ## Offical House Viewing
+Click gif for better resolution:
 
-![Soul House](/assets/house-viewing.gif)
+<a href="https://www.veed.io/view/c2aa8daa-2177-4de4-85fd-6bd92999994e?irclickid=37ZR4VwmkxyLWrVwUx0Mo3EtUkFT6UX34S3kVo0&utm_source=Anton+Kovalenko&utm_medium=affiliate&utm_campaign=Anton+Kovalenko&utm_content=Online+Tracking+Link&irgwc=1&panel=share"><img style="width:100vw;" title="Soul House" src="/assets/house-viewing.gif"></a>
